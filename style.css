@@ -1,0 +1,736 @@
+/* ======================================
+   GOOGLE RESET
+====================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    width:100%;
+    height:100vh;
+
+    overflow:hidden;
+
+    background:
+    radial-gradient(circle at top,
+    #8d0d28 0%,
+    #5f0419 35%,
+    #35000c 70%,
+    #180003 100%);
+
+    font-family:"Outfit",sans-serif;
+
+    color:#FFF7F2;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    position:relative;
+
+}
+
+
+/* ======================================
+      LOADING CONTAINER
+====================================== */
+
+.loading-screen{
+
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    position:relative;
+    z-index:10;
+
+    transition:opacity .6s ease;
+
+}
+
+.loading-screen.hide{
+
+    opacity:0;
+    pointer-events:none;
+
+}
+
+.content{
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+}
+
+
+/* ======================================
+        TOP TAG
+====================================== */
+
+.tag{
+
+    font-size:.9rem;
+
+    letter-spacing:5px;
+
+    text-transform:uppercase;
+
+    color:rgba(255,255,255,.7);
+
+    margin-bottom:35px;
+
+}
+
+
+/* ======================================
+        BIG TITLE
+====================================== */
+
+.title{
+
+    font-family:"Abril Fatface",serif;
+
+    font-size:clamp(6rem,16vw,14rem);
+
+    line-height:.82;
+
+    letter-spacing:-8px;
+
+    color:#FFF4ED;
+
+    text-transform:uppercase;
+
+    user-select:none;
+
+    text-shadow:
+
+    0 8px 30px rgba(0,0,0,.18),
+
+    0 18px 60px rgba(0,0,0,.25);
+
+}
+
+
+/* ======================================
+       SUBTITLE
+====================================== */
+
+.subtitle{
+
+    margin-top:25px;
+
+    font-size:1.1rem;
+
+    color:rgba(255,255,255,.75);
+
+    letter-spacing:1px;
+
+}
+
+
+/* ======================================
+      PROGRESS BAR
+====================================== */
+
+.progress{
+
+    width:320px;
+
+    height:8px;
+
+    margin-top:45px;
+
+    border-radius:100px;
+
+    overflow:hidden;
+
+    background:rgba(255,255,255,.15);
+
+    backdrop-filter:blur(10px);
+
+}
+
+.progress-fill{
+
+    width:0%;
+
+    height:100%;
+
+    border-radius:100px;
+
+    background:linear-gradient(
+    90deg,
+    #ffd2d8,
+    #ffffff);
+
+}
+
+
+/* ======================================
+       LOADING TEXT
+====================================== */
+
+.loading-text{
+
+    margin-top:18px;
+
+    font-size:.95rem;
+
+    color:rgba(255,255,255,.8);
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+}
+
+#percent{
+
+    font-weight:700;
+
+    color:#fff;
+
+}
+
+
+/* ======================================
+         FOOTER
+====================================== */
+
+footer{
+
+    position:absolute;
+
+    bottom:35px;
+
+    width:100%;
+
+    text-align:center;
+
+    z-index:20;
+
+}
+
+footer p{
+
+    color:rgba(255,255,255,.55);
+
+    font-size:.85rem;
+
+    letter-spacing:2px;
+
+}
+
+
+/* ======================================
+        GRAIN EFFECT
+====================================== */
+
+.grain{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    opacity:.08;
+
+    z-index:2;
+
+    background-image:
+    radial-gradient(#ffffff 1px,transparent 1px);
+
+    background-size:4px 4px;
+
+}
+
+
+/* ======================================
+      CURSOR GLOW
+====================================== */
+
+.cursor-glow{
+
+    position:fixed;
+
+    width:420px;
+
+    height:420px;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    background:
+    radial-gradient(circle,
+    rgba(255,210,220,.25),
+    transparent 70%);
+
+    filter:blur(35px);
+
+    transform:
+    translate(-50%,-50%);
+
+    z-index:1;
+
+}
+
+
+/* ======================================
+      RESPONSIVE
+====================================== */
+
+@media(max-width:900px){
+
+.title{
+
+font-size:7rem;
+
+letter-spacing:-5px;
+
+}
+
+.progress{
+
+width:260px;
+
+}
+
+.subtitle{
+
+font-size:1rem;
+
+}
+
+}
+
+
+@media(max-width:600px){
+
+.title{
+
+font-size:4.8rem;
+
+letter-spacing:-3px;
+
+}
+
+.tag{
+
+font-size:.75rem;
+
+}
+
+.progress{
+
+width:220px;
+
+}
+
+.loading-text{
+
+font-size:.8rem;
+
+}
+
+}
+
+/* ======================================
+        DECORATIVE SHAPES
+====================================== */
+
+.shape{
+    position:absolute;
+    fill:none;
+    stroke:#fff;
+    stroke-width:2.5;
+    opacity:.18;
+    pointer-events:none;
+    z-index:3;
+    animation:float 8s ease-in-out infinite;
+    transition:.4s;
+}
+
+/* ---------- STAR ---------- */
+
+.star{
+    fill:#fff;
+    stroke:none;
+}
+
+.star1{
+    width:55px;
+    top:8%;
+    left:8%;
+    animation-duration:9s;
+}
+
+.star2{
+    width:32px;
+    right:18%;
+    top:25%;
+    opacity:.35;
+    animation-duration:6s;
+}
+
+/* ---------- FLOWER ---------- */
+
+.flower{
+    width:130px;
+    left:6%;
+    bottom:10%;
+    fill:none;
+    stroke:#fff;
+    opacity:.14;
+}
+
+/* ---------- OVAL ---------- */
+
+.oval{
+    width:180px;
+    right:12%;
+    top:12%;
+    opacity:.18;
+}
+
+/* ---------- ARCH ---------- */
+
+.arch{
+    width:85px;
+    right:18%;
+    bottom:14%;
+    opacity:.22;
+}
+
+/* ---------- DECORATIVE CIRCLE ---------- */
+
+.circle{
+
+    position:absolute;
+
+    width:160px;
+    height:160px;
+
+    border-radius:50%;
+
+    border:2px solid rgba(255,255,255,.15);
+
+    left:18%;
+    top:28%;
+
+    animation:rotateCircle 18s linear infinite;
+
+}
+
+
+/* ======================================
+        BLOBS
+====================================== */
+
+.blob{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(90px);
+
+    opacity:.45;
+
+    z-index:0;
+
+}
+
+.blob1{
+
+    width:320px;
+    height:320px;
+
+    background:#ff4f87;
+
+    left:-100px;
+    top:-70px;
+
+    animation:blobOne 12s ease-in-out infinite;
+
+}
+
+.blob2{
+
+    width:280px;
+    height:280px;
+
+    background:#ff7a7a;
+
+    right:-80px;
+    bottom:-60px;
+
+    animation:blobTwo 15s ease-in-out infinite;
+
+}
+
+.blob3{
+
+    width:220px;
+    height:220px;
+
+    background:#ff2d55;
+
+    left:55%;
+    bottom:15%;
+
+    animation:blobThree 10s ease-in-out infinite;
+
+}
+
+
+/* ======================================
+        PARTICLES
+====================================== */
+
+.particles{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:2;
+
+}
+
+.particle{
+
+    position:absolute;
+
+    width:3px;
+    height:3px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.7);
+
+    animation:particleFloat linear infinite;
+
+}
+
+
+/* ======================================
+        SHAPE HOVER
+====================================== */
+
+.shape:hover{
+
+    opacity:.5;
+
+    transform:scale(1.1);
+
+}
+
+
+/* ======================================
+        ANIMATIONS
+====================================== */
+
+@keyframes float{
+
+    0%{
+
+        transform:
+        translateY(0)
+        rotate(0deg);
+
+    }
+
+    50%{
+
+        transform:
+        translateY(-18px)
+        rotate(8deg);
+
+    }
+
+    100%{
+
+        transform:
+        translateY(0)
+        rotate(0deg);
+
+    }
+
+}
+
+
+/* ---------- Circle ---------- */
+
+@keyframes rotateCircle{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+/* ---------- Blob 1 ---------- */
+
+@keyframes blobOne{
+
+    0%,100%{
+
+        transform:
+        translate(0,0)
+        scale(1);
+
+    }
+
+    50%{
+
+        transform:
+        translate(40px,-30px)
+        scale(1.15);
+
+    }
+
+}
+
+
+/* ---------- Blob 2 ---------- */
+
+@keyframes blobTwo{
+
+    0%,100%{
+
+        transform:
+        translate(0,0)
+        scale(1);
+
+    }
+
+    50%{
+
+        transform:
+        translate(-40px,25px)
+        scale(.9);
+
+    }
+
+}
+
+
+/* ---------- Blob 3 ---------- */
+
+@keyframes blobThree{
+
+    0%,100%{
+
+        transform:
+        translate(0,0)
+        scale(1);
+
+    }
+
+    50%{
+
+        transform:
+        translate(25px,-35px)
+        scale(1.2);
+
+    }
+
+}
+
+
+/* ---------- Particles ---------- */
+
+@keyframes particleFloat{
+
+    from{
+
+        transform:
+        translateY(0);
+
+        opacity:0;
+
+    }
+
+    25%{
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:
+        translateY(-120vh);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* ======================================
+        SHAPE GLOW
+====================================== */
+
+.star,
+.flower,
+.oval,
+.arch{
+
+    filter:
+    drop-shadow(0 0 12px rgba(255,255,255,.25));
+
+}
+
+
+/* ======================================
+        EXTRA DEPTH
+====================================== */
+
+.blob::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:20px;
+
+    border-radius:inherit;
+
+    background:rgba(255,255,255,.08);
+
+    filter:blur(20px);
+
+}
