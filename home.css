@@ -2595,3 +2595,54 @@ font-size:.9rem;
     }
 
 }
+
+@media(max-width:700px){
+
+    .projects{
+        padding:100px 6%;
+    }
+
+    .project-card{
+        flex-direction:column;
+        align-items:flex-start;
+        padding:32px 24px;
+        gap:24px;
+    }
+
+    .project-content{
+        width:100%;
+    }
+
+    .project-content p{
+        width:100%;
+    }
+
+    .project-number{
+        font-size:5rem;
+        right:20px;
+    }
+
+    .desing{
+        font-size:5rem;
+    }
+
+    .tech-stack{
+        gap:10px;
+    }
+
+    .tech-stack span{
+        padding:10px 16px;
+        font-size:.8rem;
+    }
+
+    .project-buttons{
+        flex-wrap:wrap;
+        gap:12px;
+    }
+
+    .project-buttons a{
+        padding:12px 22px;
+        font-size:.9rem;
+    }
+
+}
