@@ -734,3 +734,44 @@ font-size:.8rem;
     filter:blur(20px);
 
 }
+
+
+/* Solid variants */
+/* Base line-art style for new shapes */
+.shape path,
+.shape line,
+.shape rect {
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 1.5;
+}
+
+/* Solid variants */
+.shape.solid path,
+.shape.solid ellipse {
+    fill: #ffffff;
+    stroke: none;
+}
+
+/* Sparkles */
+.sparkle1 { top: 8%; left: 6%; width: 40px; opacity: 0.9; }
+.sparkle2 { top: 60%; right: 10%; width: 55px; opacity: 0.95; }
+
+/* Starburst */
+.starburst { top: 40%; left: 4%; width: 90px; opacity: 0.5; }
+
+/* Spiky suns */
+.spikysun { top: 12%; right: 8%; width: 110px; opacity: 0.4; }
+.spikysun2 { bottom: 15%; left: 8%; width: 70px; }
+
+/* Petal flower */
+.petalflower { bottom: 10%; right: 6%; width: 90px; }
+
+/* Pill stack */
+.pillstack { bottom: 6%; left: 50%; transform: translateX(-50%); width: 220px; opacity: 0.35; }
+
+/* Concentric arcs */
+.arcs { bottom: 0; right: 0; width: 160px; opacity: 0.3; }
+
+/* Arch */
+.arch { top: 25%; right: 20%; width: 60px; opacity: 0.6; }
